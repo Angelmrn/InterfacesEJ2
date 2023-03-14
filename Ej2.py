@@ -19,7 +19,7 @@ principal=ttk.Frame(raiz,width=600, height=200, bg="black")
 principal.grid()
 
 #---------------Frame imagen---------------
-Fimg=ttk.Frame(principal,width=600,height=300,bg="gray40")
+Fimg=ttk.Frame(principal,bg="gray40")
 Fimg.grid(column=0,row=0)
 
 img = PhotoImage(file="car.png")
@@ -29,23 +29,42 @@ etqImagen['image'] = img
 
 #Texto
 
-Timg=ttk.Label(Fimg,text="Product management", font=("Arial", 30 , "bold"),foreground="white",bg="gray40").grid(column=1,row=0,sticky=(W))
+Timg=ttk.Label(Fimg,text="Product management    ", font=("Arial", 30 , "bold"),foreground="white",bg="gray40").grid(column=1,row=0,sticky=(W))
 ttk.Label(Fimg,text="                               ",bg="gray40").grid(column=2,row=0)
 
 #---------------Frame Contenido---------------
 contF=ttk.Frame(principal,width=50,height=40,bg="#482525")
-contF.grid(column=0,row=2, pady=5)
+contF.grid(column=0,row=2, pady=5, padx=10)
 
+ttk.Label(contF,text="________________", font="Arial", foreground="white",background="#482525").grid(column=1,row=1,sticky=(S),padx=10)
 IDprodlbl=ttk.Label(contF,text="Id Product:",font=("Arial",10,"bold"),foreground="white" ,bg="#482525").grid(column=0,row=1,sticky=(W),padx=5)
-IDprodEnt=ttk.Entry(contF,width= 20,textvariable=IDprod,bg="#482525").grid(column=1,row=1,padx=50)
+IDprodEnt=ttk.Entry(contF,width= 20,textvariable=IDprod,bg="#482525",foreground="white", font="Italica",justify=CENTER)
+IDprodEnt.grid(column=1,row=1,padx=50,sticky=(N,W))
+IDprodEnt.config(borderwidth=0)
+
+ttk.Label(contF,text="________________", font="Arial", foreground="white",background="#482525").grid(column=1,row=2,sticky=(S),padx=10)
 Namlbl=ttk.Label(contF,text="Name:",font=("Arial",10,"bold"),foreground="white" ,bg="#482525").grid(column=0,row=2,sticky=(W),padx=5)
-NamEnt=ttk.Entry(contF,width= 20,textvariable=IDprod,bg="#482525").grid(column=1,row=2)
+NamEnt=ttk.Entry(contF,width= 20,textvariable=IDprod,bg="#482525",foreground="white",font="Italica",justify=CENTER)
+NamEnt.grid(column=1,row=2,padx=50,sticky=(N,W))
+NamEnt.config(borderwidth=0)
+
+ttk.Label(contF,text="________________", font="Arial", foreground="white",background="#482525").grid(column=1,row=3,sticky=(S),padx=10)
 Desclbl=ttk.Label(contF,text="Description:",font=("Arial",10,"bold"),foreground="white" ,bg="#482525").grid(column=0,row=3,sticky=(W),padx=5)
-DescEnt=ttk.Entry(contF,width= 20,textvariable=IDprod,bg="#482525").grid(column=1,row=3)
+DescEnt=ttk.Entry(contF,width= 20,textvariable=IDprod,bg="#482525",foreground="white",font="Italica",justify=CENTER)
+DescEnt.grid(column=1,row=3,padx=50,sticky=(N,W))
+DescEnt.config(borderwidth=0)
+
+ttk.Label(contF,text="________________", font="Arial", foreground="white",background="#482525").grid(column=1,row=4,sticky=(S),padx=10)
 Quantlbl=ttk.Label(contF,text="Quantity:",font=("Arial",10,"bold"),foreground="white" ,bg="#482525").grid(column=0,row=4,sticky=(W),padx=5)
-QuantEnt=ttk.Entry(contF,width= 20,textvariable=IDprod,bg="#482525").grid(column=1,row=4)
+QuantEnt=ttk.Entry(contF,width= 20,textvariable=IDprod,bg="#482525",foreground="white",font="Italica",justify=CENTER)
+QuantEnt.grid(column=1,row=4,padx=50,sticky=(N,W))
+QuantEnt.config(borderwidth=0)
+
+ttk.Label(contF,text="________________", font="Arial", foreground="white",background="#482525").grid(column=1,row=5,sticky=(S),padx=10)
 Pricelbl=ttk.Label(contF,text="Price:",font=("Arial",10,"bold"),foreground="white" ,bg="#482525").grid(column=0,row=5,sticky=(W),padx=5)
-PriceEnt=ttk.Entry(contF,width= 20,textvariable=IDprod,bg="#482525").grid(column=1,row=5)
+PriceEnt=ttk.Entry(contF,width= 20,textvariable=IDprod,bg="#482525",foreground="white",font="Italica",justify=CENTER)
+PriceEnt.grid(column=1,row=5,padx=50,sticky=(N,W))
+PriceEnt.config(borderwidth=0)
 
 #Botones
 
@@ -72,7 +91,8 @@ btnUpd = ttk.Button(contF,text="Update",background="chocolate2",width=15,foregro
 
 #---------------Frame Tabla---------------
 TablaF = ttk.Frame(contF,width=20,height=20)
-TablaF.grid(column=0,row=6,columnspan=5)
+TablaF.grid(column=0,row=6,columnspan=5,pady=30)
+
 
 # Crear encabezado de la tabla
 ttk.Label(TablaF, text="ID", width=10, bg="gray", fg="white").grid(row=0, column=0)
